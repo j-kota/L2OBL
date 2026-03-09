@@ -8,8 +8,8 @@ arXiv: https://arxiv.org/abs/2507.09050v2
 This repository contains experimental code for the paper named above, appearing in the Conference on Learning for Dynamics and Control (L4DC). It employs *differentiable optimization* to explore *learning-to-optimize*  approaches to **constrained bilevel problems** arising in **control co-design**. The repo is organized into three self-contained experiments:
 
 - **BQP/**: Bilevel Quadratic Program (QP)
-- **HVAC/**: Building HVAC bilevel control/co-design (multi-zone capable)
-- **TT/**: Two-tank system co-design with differentiable MPC
+- **HVAC/**: Building HVAC bilevel control/co-design
+- **TT/**: Two-tank system co-design
 
 Note: most experiment scripts save figures to `./plt/` and metrics/artifacts to `./pickle/` (and `./models/` for TT). Create these directories before running if they do not already exist.
 
@@ -102,7 +102,7 @@ Outputs:
 - Plots saved to `BQP/plt/`
 - Metrics saved to `BQP/pickle/QP_outdict*.p`
 
-### HVAC (Building bilevel control/co-design)
+### HVAC (Building HVAC control/design)
 
 Run from the `HVAC/` folder:
 
@@ -122,7 +122,7 @@ Outputs:
 - Plots saved to `HVAC/plt/`
 - Metrics saved to `HVAC/pickle/outdict*.p`
 
-### TT (Two-tank differentiable MPC co-design)
+### TT (Nonconvex two-tank system control/design)
 
 Run from the `TT/` folder:
 
@@ -145,10 +145,10 @@ Outputs:
 If you find this code useful, please cite:
 
 ```bibtex
-@article{l2obl2025,
-  title   = {Learning to Solve Constrained Bilevel Control Co-Design Problems},
-  journal = {arXiv preprint arXiv:2507.09050},
-  year    = {2025},
-  url     = {https://arxiv.org/abs/2507.09050v2}
+@inproceedings{kotary2026bilevel,
+  title        = {Learning to Solve Constrained Bilevel Control Co-Design Problems},
+  author       = {James Kotary and Himanshu Sharma and Ethan King and Draguna Vrabie and Ferdinando Fioretto and Jan Drgona},
+  booktitle    = {Conference on Learning for Dynamics and Control (L4DC)},
+  year         = {2026}
 }
 ```
