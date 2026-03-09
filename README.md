@@ -5,13 +5,13 @@ Code for the paper:
 **Learning to Solve Constrained Bilevel Control Co-Design Problems**  
 arXiv: https://arxiv.org/abs/2507.09050v2
 
-This repository contains experimental code for *learning-to-optimize* / *differentiable optimization* approaches to **constrained bilevel problems** arising in **control co-design**. The repo is organized into three self-contained experiments:
+This repository contains experimental code for the paper named above, appearing in the Conference on Learning for Dynamics and Control (L4DC). It employs *differentiable optimization* to explore *learning-to-optimize*  approaches to **constrained bilevel problems** arising in **control co-design**. The repo is organized into three self-contained experiments:
 
 - **BQP/**: Bilevel Quadratic Program (QP)
 - **HVAC/**: Building HVAC bilevel control/co-design (multi-zone capable)
 - **TT/**: Two-tank system co-design with differentiable MPC
 
-> Note: most experiment scripts save figures to `./plt/` and metrics/artifacts to `./pickle/` (and `./models/` for TT). Create these directories before running if they do not already exist.
+Note: most experiment scripts save figures to `./plt/` and metrics/artifacts to `./pickle/` (and `./models/` for TT). Create these directories before running if they do not already exist.
 
 ---
 
@@ -74,7 +74,7 @@ conda activate BLOenv
 
 ### Common setup
 
-Many scripts write outputs under the experiment directory:
+Scripts write outputs under the experiment directory:
 
 ```bash
 mkdir -p BQP/plt BQP/pickle
@@ -88,10 +88,7 @@ Run from the `BQP/` folder:
 
 ```bash
 cd BQP
-python main.py \
-  --input_file param_sol_data_3_2_10000.mat \
-  --epochs 30 \
-  --n_corr_steps 10
+python main.py
 ```
 
 Key flags:
@@ -111,12 +108,7 @@ Run from the `HVAC/` folder:
 
 ```bash
 cd HVAC
-python main.py \
-  --ntrain 10000 \
-  --ntest 1000 \
-  --nsteps 30 \
-  --nzones 1 \
-  --epochs 10
+python main.py
 ```
 
 The default dataset path is:
@@ -136,11 +128,7 @@ Run from the `TT/` folder:
 
 ```bash
 cd TT
-python main.py \
-  --n_train 3000 \
-  --n_dev 1000 \
-  --epochs 30 \
-  --n_corr_steps 3
+python main.py
 ```
 
 Outputs:
@@ -149,18 +137,12 @@ Outputs:
 - Model checkpoints saved to `TT/models/`
 - Metrics/dev artifacts saved to `TT/pickle/tt_diffmpc_outdict*.p`
 
----
-
-## Notes on reproducibility
-
-- Seeds are set inside some scripts (e.g., `HVAC/main.py`, `TT/main.py`), but results may still vary across hardware/software.
-- If you run into solver/numerical issues, try reducing learning rate, reducing correction step size (`--alpha`), or increasing the number of correction steps (`--n_corr_steps`).
 
 ---
 
 ## Citation
 
-If you use this code, please cite:
+If you find this code useful, please cite:
 
 ```bibtex
 @article{l2obl2025,
@@ -170,9 +152,3 @@ If you use this code, please cite:
   url     = {https://arxiv.org/abs/2507.09050v2}
 }
 ```
-
----
-
-## License
-
-Add a license file (e.g., MIT/BSD/Apache-2.0) if you plan to make this repository publicly reusable.
