@@ -1,0 +1,14 @@
+name: HVACenv
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - cvxpy==1.2.0
+      - scipy==1.10.1
+      - neuromancer
+      - pyswarms
+      - wandb

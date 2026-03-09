@@ -1,0 +1,10 @@
+To install:
+conda create --name BLO python==3.10.13 numpy==1.26.3 pytorch==2.1.0
+conda activate BLO
+conda install scipy==1.10.1
+pip install cvxpy==1.2.0
+pip install diffcp==1.0.23
+pip install matplotlib
+
+To run main experiment:
+python bilevel_QP.py

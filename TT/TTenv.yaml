@@ -1,0 +1,18 @@
+name: TTenv
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.8
+  - numpy
+  - scipy=1.10.1
+  - cvxpy=1.2.0
+  - matplotlib
+  - ipython
+  - pip
+  - pip:
+      - mpc
+      - numdifftools
+      - nose
+      - pyswarms

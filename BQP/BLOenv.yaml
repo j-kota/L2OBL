@@ -1,0 +1,16 @@
+name: BLOenv
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10.13
+  - numpy=1.26.3
+  - pytorch=2.1.0
+  - scipy=1.10.1
+  - pip
+  - pip:
+      - cvxpy==1.2.0
+      - diffcp==1.0.23
+      - matplotlib
